@@ -9,7 +9,6 @@ import ErrorProneComponent from '@/components/ErrorProneComponent';
 
 
 const Home: React.FC = () => {
-
   const [page, setPage] = useState<number>(1)
   const { loading, error, data, refetch } = useQuery(GET_EPISODES, {
     variables: {
@@ -29,20 +28,20 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#A3D5E0] to-[#F4F4F4] text-gray-800">
+      <ErrorBoundary>
+        <ErrorProneComponent />
+      </ErrorBoundary>
       {/* Header */}
       <header className="bg-[#4CA1AF] text-white py-6 text-center shadow-md">
         <h1 className="text-4xl font-bold tracking-wide">Rick and Morty Episodes</h1>
         <p className="mt-2 text-lg italic">Explore the multiverse of adventures!</p>
-      <ErrorBoundary>
-        <ErrorProneComponent />
-      </ErrorBoundary>
       </header>
 
       {/* Main Content */}
-      
       <main className="flex-grow p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {results && results.map(({ id, name, air_date, episode }: EpisodeProps, key: number) => (
+          {results && results.map((
+            { id, name, air_date, episode }: EpisodeProps, key: number) => (
             <EpisodeCard
               id={id}
               name={name}
