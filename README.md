@@ -60,7 +60,7 @@ The project walks through creating an ErrorBoundary class component, integrating
   - Modified componentDidCatch to call Sentry.captureException(error, { extra: errorInfo }).  
   - Verified that errors from ErrorProneComponent show up in **Sentry Dashboard**.  
 
-## 🌍 Real-World Use Case
+##  Real-World Use Case
 Error boundaries are critical in production apps to:  
 1. Prevent app-wide crashes caused by a single component.  
 2. Provide **meaningful error messages** instead of blank screens.  
@@ -70,17 +70,11 @@ Error boundaries are critical in production apps to:
 
 This implementation pattern is widely used by **enterprise-level web apps**.  
 
-## ⚙️ Implementation Summary
-- ✅ Built an **ErrorBoundary** class component with TypeScript interfaces.  
-- ✅ Wrapped the application in _app.tsx to globally handle errors.  
-- ✅ Developed an ErrorProneComponent to simulate crashes.  
-- ✅ Integrated **Sentry** for error tracking and monitoring.  
-- ✅ Implemented **fallback UI** with recovery support.  
+##  Implementation Summary
+-  Built an **ErrorBoundary** class component with TypeScript interfaces.  
+-  Wrapped the application in _app.tsx to globally handle errors.  
+-  Developed an ErrorProneComponent to simulate crashes.  
+-  Integrated **Sentry** for error tracking and monitoring.  
+-  Implemented **fallback UI** with recovery support.  
 
 This demonstrates **React best practices** for robust error handling in modern web development.  
-
-## 🚀 Getting Started
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/your-username/reactguard-error-handling.git
-   cd reactguard-error-handling
